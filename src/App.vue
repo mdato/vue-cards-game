@@ -2,22 +2,22 @@
   <div class="container">
     <h1>War Card Game!</h1>
     <div v-if="!finJgo" id="game">
- <div class="cartas" id="scoreboard">
-   <div class="score">
-     <h2>Player One: {{ ptsJug1 }} | Player Two: {{ ptsJug2 }}</h2>
-   </div>
-        
+      <div class="cartas" id="scoreboard">
+        <div class="score">
+          <h2>Player One: {{ ptsJug1 }} | Player Two: {{ ptsJug2 }}</h2>
+        </div>
+
         <button @click="callApi()">Draw Cards</button>
       </div>
 
 
       <div class="jugadores">
         <div class="uno" id="playerOne">
-          <h2>Player One</h2>
+          <h2 class="hdos">Player One</h2>
           <div class="card"><img :src="carta1?.images?.png" /></div>
         </div>
         <div class="uno" id="playerTwo">
-          <h2>Player Two</h2>
+          <h2 class="hdos">Player Two</h2>
           <div class="card"><img :src="carta2?.images?.png" /></div>
         </div>
       </div>
@@ -143,6 +143,7 @@ h1 {
   justify-content: center;
   height: 100vh;
   transform: translateY(-5%);
+  width: 100vw;
 }
 
 h2 {
@@ -182,24 +183,25 @@ button {
   border: 1px solid #ccc;
   cursor: pointer;
 }
-.score {
-  display: inline-block;
-}
 
 @media only screen and (max-width: 576px) {
 
   .container {
-    transform: scale(0.6);
+    transform: scale(0.7);
   }
 
   h1 {
     font-size: 40px;
-    margin-top: -40vh;
+    margin-top: -10vh;
   }
 
   h2 {
-    font-size: 25px;
+    font-size: 20px;
     transform: translateY(-20%);
+  }
+
+  .hdos {
+    font-size: 30px;
   }
 
   .jugadores {
@@ -208,6 +210,8 @@ button {
     align-items: center;
     justify-content: center;
     gap: 30px;
+    transform: scale(0.6);
+    margin-top: -20px;
   }
 
   .cartas {
@@ -223,6 +227,10 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+
+  button {
+    font-size: 25px;
   }
 }
 </style>
