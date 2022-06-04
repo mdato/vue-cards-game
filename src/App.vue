@@ -210,7 +210,7 @@ button {
     align-items: center;
     justify-content: center;
     gap: 30px;
-    transform: scale(0.7);
+    transform: scale(0.8);
     margin-top: -20px;
   }
 
