@@ -3,7 +3,10 @@
     <h1>War Card Game!</h1>
     <div v-if="!finJgo" id="game">
  <div class="cartas" id="scoreboard">
-        <h2>Player One: {{ ptsJug1 }} | Player Two: {{ ptsJug2 }}</h2>
+   <div class="score">
+     <h2>Player One: {{ ptsJug1 }} | Player Two: {{ ptsJug2 }}</h2>
+   </div>
+        
         <button @click="callApi()">Draw Cards</button>
       </div>
 
@@ -178,6 +181,9 @@ button {
   background-color: #b8b8d1;
   border: 1px solid #ccc;
   cursor: pointer;
+}
+.score {
+  display: inline-block;
 }
 
 @media only screen and (max-width: 576px) {
